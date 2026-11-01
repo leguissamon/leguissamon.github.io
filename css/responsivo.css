@@ -1,16 +1,19 @@
 @media (max-width: 860px) {
-  .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 6.5rem; gap: 2.5rem; }
-  .foto { max-width: 280px; box-shadow: 10px 10px 0 var(--ac); }
+  .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 6.5rem; gap: 3rem; }
+  .foto { max-width: 270px; margin: 0 auto; }
   .duas, .vitrine { grid-template-columns: 1fr; gap: 2rem; }
-  .proj { grid-template-columns: 1fr; gap: .9rem; padding: 1.4rem .2rem; }
+  .proj { grid-template-columns: 1fr; gap: .9rem; padding: 1.4rem .3rem; }
   .tags { max-width: none; }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1080px) {
   #burger { display: inline-block; }
-  #menu { position: fixed; top: 61px; left: 0; right: 0; flex-direction: column; gap: 0; padding: .5rem 1.2rem 1rem;
-    background: var(--bg); border-bottom: 1px solid var(--line); transform: translateY(-120%); visibility: hidden; transition: transform .3s, visibility .3s; }
-  #menu.aberto { transform: none; visibility: visible; }
-  #menu a { padding: .9rem 0; border-bottom: 1px solid var(--line); font-size: 1.05rem; }
+  #menu { position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: .5rem; padding: .9rem 1.2rem 1.3rem;
+    background: var(--bg); border-bottom: 1px solid var(--line); opacity: 0; visibility: hidden; transform: translateY(-8px); transition: opacity .25s, transform .25s, visibility .25s; }
+  #menu.aberto { opacity: 1; visibility: visible; transform: none; }
+  #menu a { padding: .9rem 1rem; text-align: center; font-size: 1rem; }
+}
+
+@media (max-width: 720px) {
   .secao { padding: 3.5rem 1.2rem; }
 }

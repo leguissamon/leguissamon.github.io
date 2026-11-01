@@ -1,9 +1,8 @@
 // Tema claro/escuro (lembra a escolha; usa a preferência do sistema na primeira visita)
 const raiz = document.documentElement;
-let tema = "light";
+let tema = "dark";
 try {
-  tema = localStorage.getItem("tema") ||
-    (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+  tema = localStorage.getItem("tema") || "dark";
 } catch (e) { /* sem localStorage: segue com o tema claro */ }
 raiz.dataset.theme = tema;
 
@@ -49,3 +48,23 @@ document.querySelectorAll("main section[id]").forEach(s => observador.observe(s)
 
 // Ano no rodapé
 document.getElementById("ano").textContent = new Date().getFullYear();
+
+// Ampliar as fotos dos eventos
+const zoom = document.getElementById("zoom");
+if (zoom && zoom.showModal) {
+  document.querySelectorAll(".foto-ev img").forEach(img => img.addEventListener("click", () => {
+    zoom.querySelector("img").src = img.src;
+    zoom.querySelector("img").alt = img.alt;
+    zoom.showModal();
+  }));
+  zoom.addEventListener("click", () => zoom.close());
+}
+
+// Brilho de LED que segue o mouse nas molduras
+document.querySelectorAll(".foto, .foto-ev, .print").forEach(el => {
+  el.addEventListener("pointermove", e => {
+    const r = el.getBoundingClientRect();
+    el.style.setProperty("--x", ((e.clientX - r.left) / r.width * 100) + "%");
+    el.style.setProperty("--y", ((e.clientY - r.top) / r.height * 100) + "%");
+  });
+});

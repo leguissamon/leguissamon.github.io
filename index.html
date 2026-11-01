@@ -8,7 +8,7 @@
   <link rel="icon" href="img/icones/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsivo.css">
 </head>
@@ -160,12 +160,22 @@
 
   <section id="eventos" class="secao">
     <h2>Feiras e eventos</h2>
-    <div class="vazio">
-      <p>Ainda não tenho participações para registrar aqui. Quando houver feiras, apresentações ou premiações, elas aparecem nesta seção.</p>
+    <article class="proj evento">
+      <div>
+        <span class="selo">Premiação: 3º melhor diário de bordo</span>
+        <h3>FECINOVA 2026</h3>
+        <p>Participei da feira de ciências FECINOVA 2026 e fui premiado com o certificado de terceiro melhor diário de bordo, o registro do passo a passo do projeto.</p>
+        <!-- Dica: acrescente aqui o nome do projeto, o tema e o que você fez na feira -->
+      </div>
+      <ul class="tags"><li>Feira de ciências</li><li>2026</li><li>Premiação</li></ul>
+    </article>
+
+    <!-- Fotos: salve em img/eventos/ com estes nomes (ou troque o src). Para mais fotos, copie um bloco <figure>. -->
+    <div class="fotos">
+      <figure class="foto-ev"><img src="img/eventos/fecinova-1.jpg" alt="Apresentação na FECINOVA 2026" loading="lazy" onerror="this.parentElement.classList.add('sem-foto');this.remove()"><figcaption>Apresentação do projeto</figcaption></figure>
+      <figure class="foto-ev"><img src="img/eventos/fecinova-2.jpg" alt="Estande do projeto na FECINOVA 2026" loading="lazy" onerror="this.parentElement.classList.add('sem-foto');this.remove()"><figcaption>Estande na feira</figcaption></figure>
+      <figure class="foto-ev"><img src="img/eventos/fecinova-3.jpg" alt="Certificado de terceiro melhor diário de bordo" loading="lazy" onerror="this.parentElement.classList.add('sem-foto');this.remove()"><figcaption>Certificado de 3º melhor diário de bordo</figcaption></figure>
     </div>
-    <!-- Modelo para quando tiver um evento:
-    <article class="proj"><div><h3>Nome do evento</h3><p>O que você apresentou ou ganhou.</p></div><ul class="tags"><li>2026</li></ul></article>
-    -->
   </section>
 
   <section id="sites" class="secao">
@@ -218,6 +228,8 @@
 <footer class="rodape">
   <p>Kauã Leguissamon da Silva, <span id="ano"></span>. Feito com HTML, CSS e JavaScript.</p>
 </footer>
+
+<dialog id="zoom" aria-label="Foto ampliada"><img alt=""></dialog>
 
 <script src="js/main.js"></script>
 </body>
